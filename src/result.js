@@ -20,6 +20,6 @@
                 .error(function(status){
                     console.log(status);
                 });
-        }
+        };
     }]);
 })(angular);
