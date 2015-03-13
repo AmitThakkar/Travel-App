@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="airlineApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ixigo App</title>
+</head>
+<body ng-controller="AirCtrl">
+<label>From:</label>
+<select ng-model="selectedFrom" ng-options="value for (key, value) in result"></select>
+{{selectedFrom}}
+<br/>
+<br/>
+<label>To:</label>
+<select ng-model="selectedTo" ng-options="value for (key, value) in result"></select>
+{{selectedTo}}
+<br/>
+<br/>
+<input type="button" value="Search" ng-click="searchFlights()">
+<br/>
+<br/>
+
+<div ng-repeat="flight in flights">
+    From: {{flight.originCode}}
+    To: {{flight.designationCode}}
+    Take Off Time: {{flight.takeoffTime}}
+    Landing Time: {{flight.landingTime}}
+    Price: {{flight.price}}
+    Airline:{{flight.airlineCode}}
+    Class: {{flight.class}}
+    <hr/>
+</div>
+
+
+<script src="lib/angular.min.js"></script>
+<script src="src/result.js"></script>
+<script src="src/UrlConfig.js"></script>
+<script src="src/AirlineService.js"></script>
+</body>
+</html>
