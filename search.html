@@ -6,8 +6,8 @@
   <link href="css/css.css" rel="stylesheet">
 </head>
 <body ng-controller="AirlineController as ac">
-<label>From:</label> <select ng-model="ac.selectedFrom" ng-options="value for (key, value) in ac.airportMap" ng-change="ac.sourceStationSelected()"></select>
-<label>To:</label> <select ng-model="ac.selectedTo" ng-options="value for (key, value) in ac.sourceAirportMap"></select>
+<label>From:</label> <select ng-model="ac.selectedFrom" ng-options="key as value for (key, value) in ac.airportMap" ng-change="ac.sourceStationSelected()"></select>
+<label>To:</label> <select ng-model="ac.selectedTo" ng-options="key as value for (key, value) in ac.sourceAirportMap"></select>
 <input type="button" value="Search" ng-click="ac.searchFlights()">
 <hr/>
 <ul ng-if="ac.flights.length" class="listStyleNone flightListing">
