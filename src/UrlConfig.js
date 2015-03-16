@@ -5,8 +5,9 @@
     var airlineApp = ng.module("airlineApp");
     airlineApp.factory("UrlConfig", function () {
         return {
-            airportMap: "/Travel-App/airportMap",
-            flightsMap: "/Travel-App/flights/flights"
+            airportMap: "/Travel-App/flightDetails/airportMap",
+            airlineMap: "/Travel-App/flightDetails/airlineMap",
+            flightsMap: "/Travel-App/flightDetails/flights"
         }
     });
 })(angular);

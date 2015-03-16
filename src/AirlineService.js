@@ -8,7 +8,10 @@
             return $http.get(UrlConfig.airportMap);
         };
         this.getFlightList = function (from, to) {
-            return $http.get(UrlConfig.flightsMap + from + to + ".json");
+            return $http.get(UrlConfig.flightsMap + from + to);
+        };
+        this.getAirlineMap = function (from, to) {
+            return $http.get(UrlConfig.airlineMap);
         };
     }]);
 })(angular);

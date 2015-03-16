@@ -6,8 +6,8 @@
   <link href="css/css.css" rel="stylesheet">
 </head>
 <body ng-controller="AirlineController as ac">
-<label>From:</label> <select ng-model="selectedFrom" ng-options="value for (key, value) in ac.airportMap"></select>
-<label>To:</label> <select ng-model="selectedTo" ng-options="value for (key, value) in ac.airportMap"></select>
+<label>From:</label> <select ng-model="ac.selectedFrom" ng-options="value for (key, value) in ac.airportMap" ng-change="ac.sourceStationSelected()"></select>
+<label>To:</label> <select ng-model="ac.selectedTo" ng-options="value for (key, value) in ac.sourceAirportMap"></select>
 <input type="button" value="Search" ng-click="ac.searchFlights()">
 <hr/>
 <ul ng-if="ac.flights.length" class="listStyleNone flightListing">
@@ -53,13 +53,13 @@
       <li>{{ flight.takeoffTime | date : 'HH:mm dd/MM' }}</li>
       <li>{{ flight.landingTime | date : 'HH:mm dd/MM' }}</li>
       <li>{{ flight.price }}</li>
-      <li>{{ flight.airlineCode }}</li>
+      <li>{{ ac.airlineMap[flight.airlineCode] }}</li>
       <li>{{ flight.class }}</li>
     </ul>
   </li>
 </ul>
 <script src="lib/angular.min.js"></script>
-<script src="src/result.js"></script>
+<script src="src/search.js"></script>
 <script src="src/UrlConfig.js"></script>
 <script src="src/AirlineService.js"></script>
 </body>
