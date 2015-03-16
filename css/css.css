@@ -1,0 +1,27 @@
+.listStyleNone {
+  list-style: none;
+}
+
+.flightListing > li {
+  display: block;
+  width: 1300px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.flightList li {
+  float: left;
+  width: 120px;
+  margin: 0px 20px;
+}
+
+.flightList li img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.flightList li p {
+  display: inline-block;
+  vertical-align: middle;
+}
